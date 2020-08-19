@@ -1,7 +1,7 @@
 export default {
   key: "UserReport",
   options: {
-    delay: 5000,
+    delay: 0,
   },
   async handle({ data }) {
     const { user } = data;

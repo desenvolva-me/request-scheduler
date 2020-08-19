@@ -6,7 +6,7 @@ module.exports = {
       host: "127.0.0.1",
       database: "scheduler",
       user: "postgres",
-      password: "root",
+      password: "postgres",
     },
     migrations: {
       directory: "./src/database/migrations",
