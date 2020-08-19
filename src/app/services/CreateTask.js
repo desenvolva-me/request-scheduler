@@ -1,4 +1,5 @@
 import db from "../../database/connection";
+
 export default async function createTask(taskEndPoint, callTaskDate) {
   const insertedTasks = await db("Task")
     .insert({

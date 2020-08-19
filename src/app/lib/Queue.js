@@ -12,9 +12,9 @@ const queues = Object.values(jobs).map((job) => ({
 
 export default {
   queues,
-  add(name, data) {
+  add(name, data, delay) {
     const queue = this.queues.find((queue) => queue.name === name);
-
+    queue.options.delay = delay;
     return queue.bull.add(data, queue.options);
   },
 

@@ -1,1 +1,1 @@
-export { default as UserReport } from "./UserReport";
+export { default as CallEndpoint } from "./CallEndpoint";
