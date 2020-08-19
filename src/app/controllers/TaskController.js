@@ -1,4 +1,6 @@
 import createTask from "../services/CreateTask";
+import setQueuedTask from "../services/SetQueuedTask";
+
 import Queue from "../lib/Queue";
 class TaskController {
   async store(req, res) {
@@ -8,6 +10,7 @@ class TaskController {
     const delay = new Date(Task.do_task).getTime() - new Date().getTime();
 
     await Queue.add("CallEndpoint", { Task }, delay);
+    setQueuedTask(Task.id);
     return res.json(Task);
   }
 }
