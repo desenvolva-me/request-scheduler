@@ -6,7 +6,7 @@ export default async function createTask(taskEndPoint, callTaskDate) {
       endPoint: taskEndPoint,
       do_task: callTaskDate,
     })
-    .returning(["endPoint", "do_task"]);
+    .returning(["id", "endPoint", "do_task"]);
 
   const Task = insertedTasks[0];
   return Task;
