@@ -3,12 +3,12 @@ import setQueuedTask from "../services/SetQueuedTask";
 
 import Queue from "../lib/Queue";
 class TaskController {
-  isValidHttpUrl(string) {
+  isValidUrl(string) {
     let url;
 
     try {
       url = new URL(string);
-    } catch (_) {
+    } catch {
       return false;
     }
 
@@ -18,7 +18,7 @@ class TaskController {
   async store(req, res) {
     const { endPoint, callTaskAt } = req.body;
 
-    if (new TaskController().isValidHttpUrl(endPoint)) {
+    if (new TaskController().isValidUrl(endPoint)) {
       const Task = await createTask(
         endPoint,
         new Date(callTaskAt).toUTCString()
